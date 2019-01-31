@@ -85,9 +85,6 @@ class WheelDialog constructor(context: Context, override val model: WheelDialogM
 		super.populate()
 		Timber.d("populate")
 		model.apply {
-			np1?.setWheelItemCount(5)
-			np1?.setMax(1000)
-			np1?.setMin(0)
 			np1?.setUnselectedTextColor(R.color.inkdialog_black_text)
 			np1?.setSelectedTextColor(R.color.inkdialog_black_text)
 			np1?.setAdapter(DecimalPickerAdapter(firstValuesList))
@@ -102,9 +99,6 @@ class WheelDialog constructor(context: Context, override val model: WheelDialogM
 
 			secondValuesList.let { valuesList ->
 				if(valuesList!=null) {
-					np2?.setWheelItemCount(5)
-					np2?.setMax(1000)
-					np2?.setMin(0)
 					np2?.setUnselectedTextColor(R.color.inkdialog_black_text)
 					np2?.setSelectedTextColor(R.color.inkdialog_black_text)
 					np2?.setAdapter(DecimalPickerAdapter(valuesList))

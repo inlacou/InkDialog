@@ -24,6 +24,8 @@
 				android:id="@+id/np_1"
 				android:layout_width="0dp"
 				android:layout_height="wrap_content"
+                app:textSize="28sp"
+                app:wheelItemCount="5"
 				android:layout_weight="1"/>
 		<TextView
 				android:id="@+id/tv_separator"
@@ -37,6 +39,8 @@
 				android:id="@+id/np_2"
 				android:layout_width="0dp"
 				android:layout_height="wrap_content"
+                app:textSize="28sp"
+                app:wheelItemCount="5"
 				android:layout_weight="1"/>
 	</LinearLayout>
 	<RelativeLayout

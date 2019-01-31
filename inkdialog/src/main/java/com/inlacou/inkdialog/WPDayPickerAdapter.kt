@@ -1,6 +1,7 @@
 package com.inlacou.inkdialog
 
 import com.super_rabbit.wheel_picker.WheelAdapter
+import timber.log.Timber
 
 class DecimalPickerAdapter(val values: List<String>): WheelAdapter {
 
@@ -10,6 +11,7 @@ class DecimalPickerAdapter(val values: List<String>): WheelAdapter {
 	}
 
 	private fun intoRange(position: Int, size: Int): Int {
+        Timber.d("intoRange | position: $position")
 		return when {
 			position in 0 until size -> position
 			position < 0 -> Math.abs((position%size)+size)%size
@@ -20,25 +22,26 @@ class DecimalPickerAdapter(val values: List<String>): WheelAdapter {
 
 	//get item position based on item string value
 	override fun getPosition(vale: String): Int {
+        Timber.d("getPosition | vale: $vale")
 		return values.indexOf(vale).let {
 			if(it>0) it
 			else 0
 		}
 	}
 
-	//return a string with the approximate longest text width, for supporting WRAP_CONTENT //TODO check how this is done in code
+	//return a string with the approximate longest text width, for supporting WRAP_CONTENT
 	override fun getTextWithMaximumLength(): String {
 		return values.longest()
 	}
 
 	//return the maximum index
 	override fun getMaxIndex(): Int {
-		return Int.MAX_VALUE
+		return values.size-1
 	}
 
 	//return the minimum index
 	override fun getMinIndex(): Int {
-		return Int.MIN_VALUE
+		return 0
 	}
 
 	fun List<String>.longest(): String = sortedByDescending { it.length }.first()

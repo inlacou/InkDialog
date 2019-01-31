@@ -1,0 +1,50 @@
+<resources>
+	<!-- Dialog -->
+	<style name="InkDialogTitleTheme" parent="@android:style/Widget.TextView">
+		<item name="android:textColor">@color/inkdialog_black_text</item>
+		<item name="android:textStyle">bold</item>
+		<item name="android:fontFamily">sans-serif</item>
+		<item name="android:textSize">22sp</item>
+	</style>
+	
+	<style name="InkDialogContentTheme" parent="@android:style/Widget.TextView">
+		<item name="android:textColor">@color/inkdialog_black_text</item>
+		<item name="android:textStyle">normal</item>
+		<item name="android:fontFamily">sans-serif</item>
+		<item name="android:textSize">17sp</item>
+	</style>
+	
+	<style name="InkDialogPositiveButtonTheme" parent="WhiteButtonTheme">
+		<item name="android:textColor">@color/colorAccent</item>
+		<item name="android:textStyle">bold</item>
+		<item name="android:textAllCaps">true</item>
+	</style>
+	
+	<style name="InkDialogNeutralButtonTheme" parent="WhiteButtonTheme">
+		<item name="android:textColor">@color/inkdialog_black_text</item>
+		<item name="android:textStyle">bold</item>
+		<item name="android:textAllCaps">true</item>
+	</style>
+	
+	<style name="InkDialogNegativeButtonTheme" parent="WhiteButtonTheme">
+		<item name="android:textColor">@color/inkdialog_red_text</item>
+		<item name="android:textStyle">bold</item>
+		<item name="android:textAllCaps">true</item>
+	</style>
+	<!-- /Dialog -->
+	
+	<style name="WhiteButtonTheme" parent="@android:style/Widget.TextView">
+		<item name="android:paddingRight">@dimen/inkdialog_button_padding</item>
+		<item name="android:paddingLeft">@dimen/inkdialog_button_padding</item>
+		<item name="android:paddingTop">@dimen/inkdialog_button_padding</item>
+		<item name="android:paddingBottom">@dimen/inkdialog_button_padding</item>
+		<item name="android:textColor">@color/inkdialog_black_text</item>
+		<item name="android:textStyle">normal</item>
+		<item name="android:fontFamily">sans-serif</item>
+		<item name="android:textSize">18sp</item>
+		<item name="android:lineSpacingExtra">4sp</item>
+		<item name="android:clickable">true</item>
+		<item name="android:background">@drawable/ink_dialog_button_background</item>
+	</style>
+	
+</resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<dimen name="inkdialog_button_separation">16dp</dimen>
+	<dimen name="inkdialog_button_padding">16dp</dimen>
+	<dimen name="inkdialog_padding">16dp</dimen>
+	<dimen name="inkdialog_vertical_padding">16dp</dimen>
+</resources>

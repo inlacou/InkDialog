@@ -16,6 +16,7 @@
 		android:paddingBottom="@dimen/inkdialog_vertical_padding"
 		tools:text="Title"/>
 	<TextView
+		android:id="@+id/content"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:paddingBottom="@dimen/inkdialog_vertical_padding"

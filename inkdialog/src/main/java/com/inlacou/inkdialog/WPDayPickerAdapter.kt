@@ -36,12 +36,12 @@ class DecimalPickerAdapter(val values: List<String>): WheelAdapter {
 
 	//return the maximum index
 	override fun getMaxIndex(): Int {
-		return values.size-1
+		return Int.MAX_VALUE
 	}
 
 	//return the minimum index
 	override fun getMinIndex(): Int {
-		return 0
+		return Int.MIN_VALUE
 	}
 
 	fun List<String>.longest(): String = sortedByDescending { it.length }.first()

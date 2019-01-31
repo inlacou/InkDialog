@@ -31,8 +31,10 @@ open class WheelDialogMdl(
 	onNeutral: ((InkDialog) -> Unit)? = null,
 	onNegative: ((InkDialog) -> Unit)? = null,
 	val firstValuesList: List<String>,
+	val defaultValueFirst: String? = null,
 	val onFirstValueChange: ((String) -> Unit),
 	val separator: String? = null,
 	val secondValuesList: List<String>? = null,
+	val defaultValueSecond: String? = null,
 	val onSecondValueChange: ((String) -> Unit)? = null
 ): InkDialogMdl(title, null, positiveText, neutralText, negativeText, onPositive, onNeutral, onNegative)

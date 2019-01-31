@@ -15,9 +15,10 @@ import timber.log.Timber
 class WheelDialog constructor(context: Context, override val model: WheelDialogMdl)
 	: InkDialog(context, model) {
 
-	class Builder(context: Context, val firstValuesList: List<String>, val onFirstValueSelected: (String) -> Unit): InkDialog.Builder(context) {
+	class Builder(context: Context, val firstValuesList: List<String>, val defaultValueFirst: String? = null, val onFirstValueSelected: (String) -> Unit): InkDialog.Builder(context) {
 
 		protected var separator: String? = null
+		protected var defaultValueSecond: String? = null
 		var onSecondValueSelected: ((String) -> Unit)? = null
 			private set
 
@@ -27,9 +28,10 @@ class WheelDialog constructor(context: Context, override val model: WheelDialogM
 		/**
 		 * First element on the list will be the default
 		 */
-		fun secondWheel(separator: String? = null, secondValuesList: List<String>, onSecondValueSelected: ((String) -> Unit)): InkDialog.Builder {
+		fun secondWheel(separator: String? = null, secondValuesList: List<String>, defaultValueSecond: String? = null, onSecondValueSelected: ((String) -> Unit)): InkDialog.Builder {
 			this.separator = separator
 			this.secondValuesList = secondValuesList
+			this.defaultValueSecond = defaultValueSecond
 			this.onSecondValueSelected = onSecondValueSelected
 			return this
 		}
@@ -45,9 +47,11 @@ class WheelDialog constructor(context: Context, override val model: WheelDialogM
 					negativeText = negativeButtonText,
 					onNegative = onNegativeClick,
 					firstValuesList = firstValuesList,
+					defaultValueFirst = defaultValueFirst,
 					onFirstValueChange = onFirstValueSelected,
 					separator = separator,
 					secondValuesList = secondValuesList,
+					defaultValueSecond = defaultValueSecond,
 					onSecondValueChange = onSecondValueSelected
 				)
 			)
@@ -93,6 +97,7 @@ class WheelDialog constructor(context: Context, override val model: WheelDialogM
 					controller.onFirstValueSelected(newVal)
 				}
 			})
+			defaultValueFirst?.let { np1?.scrollToValue(it) }
 
 			tvSeparator?.text = separator
 			tvSeparator?.setVisible(separator!=null)
@@ -107,6 +112,7 @@ class WheelDialog constructor(context: Context, override val model: WheelDialogM
 							controller.onSecondValueSelected(newVal)
 						}
 					})
+					defaultValueSecond?.let { np2?.scrollToValue(it) }
 				}
 				np2.setVisible(valuesList!=null)
 			}

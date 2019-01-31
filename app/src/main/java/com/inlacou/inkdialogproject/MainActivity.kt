@@ -30,8 +30,8 @@ class MainActivity : AppCompatActivity() {
                 .build().show()
 		}
 		btn_wheel_dialog?.setOnClickListener {
-            WheelDialog.Builder(this, (0..30).map { it.toString() }) { Timber.d("value 1 selected: $it") }
-                .secondWheel(".", listOf("00", "25", "50", "75", "-75", "-50", "-25")) { Timber.d("value 2 selected: $it") }
+            WheelDialog.Builder(this, (0..30).map { it.toString() }, "9") { Timber.d("value 1 selected: $it") }
+                .secondWheel(".", listOf("00", "25", "50", "75", "-75", "-50", "-25"), "50") { Timber.d("value 2 selected: $it") }
                 .title("Right Eye")
                 .positiveButton("Apply") { Toast.makeText(this, "hello!", Toast.LENGTH_LONG).show(); it.cancel() }
                 .neutralButton("Cancel") { it.cancel(); configure() }

@@ -2,8 +2,6 @@ package com.inlacou.inkdialog.wheel
 
 import android.content.Context
 import android.os.Bundle
-import android.view.View
-import android.widget.NumberPicker
 import android.widget.TextView
 import com.inlacou.inkdialog.DecimalPickerAdapter
 import com.inlacou.inkdialog.R
